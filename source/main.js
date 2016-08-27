@@ -85,14 +85,35 @@ Question.prototype.displayQuestion = function() {
 };
 
 // multiple choice question
-function MultipleChoiceQuestion(theQuestion, theCoices, theCorrectAnswer) {
+function MultipleChoiceQuestion(theQuestion, theChoices, theCorrectAnswer) {
    // passing MultipleChoiceQuestion as the This object
    Question(this, theQuestion, theChoices, theCorrectAnswer);
 }
 // inherit methods and properties from Question
 inheritPrototype(MultipleChoiceQuestion, Question);
+// drag drop question
+function DragDropQuestion(theQuestion, theChoices, theCorrectAnswer) {
+   Question.call(this, theQuestion, theChoices, theCorrectAnswer);
+}
+// inherit from question
+inheritPrototype(DragDropQuestion, Question);
 
+// override the displayQuestion method it inherited
+DragDropQuestion.prototype.displayQuestion = function() {
+   console.log(this.question);
+};
 
+// initialize some questions and add them to an array
+var allQuestions = [
+   new MultipleChoiceQuestion('Who is Prime Minister of England?', ['Obama', 'Blair', 'Brown', 'Cameron'], 3),
+   new MultipleChoiceQuestion('What is the Capital of Brazil?', ['São Paulo', 'Rio de Janeiro', 'Brasília'], 2),
+   new DragDropQuestion('Drag the correct City to the world map.', ['Washington, DC', 'Rio de Janeiro', 'Stockholm'], 0)
+];
+
+// display all questions
+allQuestions.forEach(function(eachQuestion) {
+   eachQuestion.displayQuestion();
+});
 
 // // example of inheritance pattern
 // var cars = {
