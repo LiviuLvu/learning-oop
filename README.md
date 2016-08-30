@@ -1,11 +1,9 @@
 # Hack space for learning more about OOP  
 
-Trying to build a quiz app  
-Following instructions from:  
+Trying to build a quiz app following instructions from:  
 http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/  
+
+Explored OOP prototype concepts following instructions from:  
 http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/  
 
-Could not get this code to work:  
-"main.js:79 Uncaught TypeError: Cannot read property 'forEach' of undefined"  
-
-Strict mode does not work at all.  
+Added study examples based on book from Nicholas.C.Zakas - The principles of OOP
